@@ -1,0 +1,15 @@
+﻿@import '~angular-shared-scss/src/settings';
+
+$DropdownDivider-border-width: 0.0625rem 0 0 !default;
+$DropdownDivider-border-color: $tiara !default;
+$DropdownDivider-border-style: solid !default;
+
+// component
+.DropdownDivider {
+    // layout
+    border-width: $DropdownDivider-border-width;
+
+    // theme
+    border-color: $DropdownDivider-border-color;
+    border-style: $DropdownDivider-border-style;
+}

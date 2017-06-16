@@ -1,0 +1,46 @@
+﻿@import '~angular-shared-scss/src/settings';
+
+$DropdownButton-padding: 0.75rem 1rem !default;
+$DropdownButton-font-size: 1rem !default;
+$DropdownButton-line-height: 1 !default;
+$DropdownButton-hover-background-color: $link-water !default;
+$DropdownButton-hover-color: $astral-1 !default;
+$DropdownButton-hover-fill: $astral-1 !default;
+
+@mixin hover-style {
+    &:hover, &:active, &:focus {
+        background-color: darken($DropdownButton-hover-background-color, 6%);
+        color: $DropdownButton-hover-color;
+        fill: $DropdownButton-hover-fill;
+    }
+}
+
+@mixin disabled-style {
+    &:disabled {
+    	background-color: transparent;
+    	cursor: default;
+    	opacity: 0.5;
+        color: inherit;
+    }
+}
+
+// component
+.DropdownButton {
+    // layout
+    @include button-reset;
+    padding: $DropdownButton-padding;
+    line-height: $DropdownButton-line-height;
+    white-space: nowrap;
+    width: 100%;
+
+    // theme
+    color: inherit;
+    cursor: pointer;
+    font-size: $DropdownButton-font-size;
+    text-align: left;
+    transition: all 0.3s $cubic-bezier;
+    
+    // order matters
+    @include hover-style;
+    @include disabled-style;
+}

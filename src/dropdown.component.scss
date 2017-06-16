@@ -1,0 +1,79 @@
+﻿@import '~angular-shared-scss/src/settings';
+@import '~angular-shared-scss/src/animations';
+
+@keyframes animationMenuSlideDown {
+    0% {
+        opacity: 0;
+        margin-top: -1rem;
+	}
+
+	100% {
+		opacity: 1;
+        margin-top: 0;
+	}
+}
+$animation-menu-slide-down: animationMenuSlideDown 0.3s $cubic-bezier 0s 1 forwards;
+
+$Dropdown-background-color: $white !default;
+$Dropdown-border-radius: 0.25rem !default;
+$Dropdown-box-shadow: $whiteframe-shadow-8dp !default;
+$Dropdown-color: $sirocco-2 !default;
+$Dropdown-fill: $sirocco-2 !default;
+$Dropdown-font-weight: 400 !default;
+
+// component
+.Dropdown {
+    // layout
+    display: none;
+    min-width: 12rem;
+    position: fixed;
+    z-index: -1;
+
+    // theme
+    background-color: $Dropdown-background-color;
+    border-radius: $Dropdown-border-radius;
+    box-shadow: $Dropdown-box-shadow;
+    color: $Dropdown-color;
+    fill: $Dropdown-fill;
+    font-weight: $Dropdown-font-weight;
+    opacity: 1;
+    text-align: left;
+    transition: all 0.3s $cubic-bezier;
+
+    &:first-child {
+        // layout
+        overflow: hidden;
+        border-top-left-radius: $Dropdown-border-radius;
+        border-top-right-radius: $Dropdown-border-radius;
+    }
+
+    &:last-child {
+        // layout
+        overflow: hidden;
+        border-bottom-left-radius: $Dropdown-border-radius;
+        border-bottom-right-radius: $Dropdown-border-radius;
+    }
+
+    & .ng-isolate-scope {
+        // layout
+        display: block;
+    }
+
+    &.is-showing {
+        // layout
+        display: block;
+        z-index: 80;
+
+        // theme
+        animation: $animation-menu-slide-down;
+    }
+
+    &.is-showing-remove {
+        // layout
+        display: block;        
+        z-index: 80;
+
+        // theme
+        animation: $fade-out;
+    }
+}

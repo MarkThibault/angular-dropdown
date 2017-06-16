@@ -1,4 +1,4 @@
-# angular Dropdown
+# Angular Dropdown
 
 This is a dropdown component. 
 
@@ -11,7 +11,8 @@ It is suggested to have "angular-animate" installed.
 ### Installing
 
 ```
-npm install --save angular-dropdown
+Add the following to your dependencies:
+"angular-dropdown": "git://github.com/MarkThibault/angular-dropdown.git",
 ```
 
 ### Usage
